@@ -1,0 +1,641 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap'); */
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+/* #28AD60 rgb(40,173,96) hsl(145, 62%, 42%) */
+/* #192B51 rgb(25,43,81) hsl(221, 52%, 21%) */
+/* #666666 rgb(102,102,102) hsl(0, 0%, 40%) */
+/* #F3603C rgb(243,96,60) hsl(11,88%,59%) */
+/* #f5f7fb rgb(245,247,251) hsl(220,42%,97%) */
+/* #EFECFD rgb(239,236,253) hsl(250,80%,95%) */
+/* #FFEFEB rgb(255,239,235) hsl(12,100%,96%); */
+/* #183b56 rgb(24,59,86) hsl(206,56%,21%) */
+/* #577592 rgb(87,117,146) hsl(209,25%,45%) */
+/* #232C51 rgb(35,44,81) hsl(228,39%,23%) */
+/* #2294ed rgb(34,148,27) hsl(206,84%,53%) */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/*************************************************************** MENU starts here *****************************************************/
+#menuIcon path:nth-child(1) {
+  fill: hsl(145deg, 62%, 42%);
+}
+#menuIcon path:nth-child(3) {
+  fill: hsl(145deg, 62%, 42%);
+}
+#menuIcon path:nth-child(4) {
+  fill: hsl(145deg, 62%, 42%);
+}
+#menuIcon path:nth-child(8) {
+  fill: hsl(145deg, 62%, 42%);
+}
+#menuIcon path:nth-child(9) {
+  fill: hsl(145deg, 62%, 42%);
+}
+
+#menu {
+  position: fixed;
+  width: 100vw;
+  height: 8%;
+  padding-inline: 7%;
+  padding-block: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  z-index: 20; /* #f5f7fb */
+  backdrop-filter: blur(0.2rem);
+  padding-bottom: 1%;
+}
+#menu .iconContainer {
+  display: flex;
+  align-items: center;
+}
+#menu .iconContainer #logo {
+  height: 40px;
+  width: 10%;
+}
+#menu .iconContainer a {
+  cursor: pointer;
+  text-decoration: none;
+}
+#menu .iconContainer a strong {
+  font-size: 20px;
+  letter-spacing: 0.6px;
+  color: hsl(221deg, 52%, 26%);
+}
+#menu .iconContainer a strong::first-letter {
+  font-size: 23px;
+  color: hsl(145deg, 62%, 42%);
+}
+#menu .iconContainer a strong span {
+  margin-left: 2px;
+  position: relative;
+}
+#menu .iconContainer a strong span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 107%;
+  border-radius: 5px;
+  background-color: hsl(11deg, 88%, 59%);
+  z-index: -1;
+}
+#menu .menuContainer {
+  flex-basis: 50%;
+}
+#menu .menuContainer .menuList li {
+  list-style-type: none;
+  display: inline-block;
+}
+#menu .menuContainer .menuList li .active {
+  color: hsl(145deg, 62%, 42%);
+}
+#menu .menuContainer .menuList li a {
+  text-decoration: none;
+  margin-right: 25px;
+  text-transform: capitalize;
+  font-size: 15px;
+  color: hsl(0deg, 0%, 40%);
+  cursor: pointer;
+  padding: 4.5px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+#menu .menuContainer .menuList li a:hover {
+  color: #fff;
+  background-color: hsl(145deg, 62%, 42%);
+}
+#menu .ctaContainer i {
+  color: hsl(221deg, 52%, 26%);
+  margin-left: 15px;
+  font-size: 17px;
+  border-radius: 16px;
+  padding: 6px;
+  background-color: #eee;
+  transition: 0.2s;
+}
+#menu .ctaContainer i:hover {
+  color: hsl(11deg, 88%, 59%);
+  transform: scale(120%);
+}
+
+/*************************************************************** MENU ends here *****************************************************/
+/*************************************************************** INTRO starts here *****************************************************/
+#intro {
+  padding-inline: 7%;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("Images/home-image7.png");
+  background-size: cover;
+}
+#intro .introText-container h3 {
+  color: hsl(145deg, 62%, 42%);
+  font-size: 13px;
+  font-weight: bold;
+  position: relative;
+}
+#intro .introText-container h1 {
+  color: hsl(221deg, 52%, 26%);
+  margin: 1px 0 20px;
+  font-size: 2.4rem;
+  text-transform: capitalize;
+}
+#intro .introText-container p {
+  color: hsl(0deg, 0%, 40%);
+  font-size: 15px;
+  word-spacing: 1px;
+  margin-bottom: 20px;
+}
+#intro .introText-container .subheader-Container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#intro .introText-container .subheader-Container hr {
+  display: inline-block;
+  height: 0.9px;
+  width: 5%;
+  background-color: hsl(145deg, 62%, 42%);
+}
+#intro .introText-container .buttonContainer {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+#intro .introText-container .buttonContainer a {
+  padding: 11px;
+  background-color: hsl(145deg, 62%, 42%);
+  border-radius: 9px;
+  color: #fff;
+  border: 2px solid transparent;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  transition: 0.2s;
+}
+#intro .introText-container .buttonContainer a:hover {
+  background-color: #fff;
+  color: hsl(11deg, 88%, 59%);
+  border-color: hsl(145deg, 62%, 42%);
+}
+#intro .introText-container .buttonContainer i {
+  font-size: 13px;
+  margin-left: 6px;
+}
+#intro .introImg-container {
+  height: 100vh;
+}
+
+/*************************************************************** INTRO ends here *****************************************************/
+/*************************************************************** FORM starts here *****************************************************/
+/* #form-container {
+	position: relative;
+	left: 25%;
+	bottom: 50px;
+	z-index: 1;
+	width: 50vw;
+	height: 500px; 
+    border: 1px solid hsl(11,88%,89%);
+    border:2px solid black; 
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	padding-block: 10px;
+	padding-inline: 100px;
+	border-radius: 15px;
+	backdrop-filter: blur(65px);
+	background-color: #fff;
+	box-shadow: 0 4px 5px hsl(11,88%,89%);
+	transform: perspective(65px) translateZ(10px); 
+    border-image-source:url(Images/curly-bracket.svg);
+    border-image-repeat:stretch;
+} */
+#total-form-container {
+  position: relative;
+  left: 25%; /* 17% */ /* 25% */
+  bottom: 3rem; /* 106px */ /* 40px */
+  z-index: 1;
+  width: 50vw; /* 55vw */ /* 50vw */
+  display: flex;
+  flex-direction: column; /* no flex-direction */
+  gap: 15px;
+  padding-block: 30px;
+  padding-inline: 100px;
+  border-radius: 15px;
+  background-color: #f5f7fb; /* No Bg */
+  box-shadow: 0 2px 3px 2px #eee;
+}
+#total-form-container .form-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+#total-form-container .form-container h3 {
+  color: hsl(221deg, 52%, 26%);
+  background-color: #EFECFD;
+  display: inline-block;
+  width: 22%;
+  padding: 7px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  /* margin-right: -82px; */
+  font-size: 20px;
+}
+#total-form-container .form-container .login-form {
+  display: flex;
+  gap: 15px;
+}
+#total-form-container .form-container .login-form input {
+  border-bottom: 2px solid hsl(145deg, 62%, 42%);
+}
+#total-form-container .form-container .login-form input::placeholder {
+  color: hsl(0deg, 0%, 40%);
+  font-size: 13px;
+}
+#total-form-container .form-container .login-form a {
+  text-decoration: none;
+  padding: 6px 35px;
+  margin-left: 20px;
+  background-color: hsl(145deg, 62%, 42%);
+  border: 2px solid transparent;
+  border-radius: 9px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  transition: 0.2s;
+}
+#total-form-container .form-container .login-form:hover {
+  background-color: #fff;
+  color: hsl(11deg, 88%, 59%);
+  border-color: hsl(145deg, 62%, 42%);
+}
+#total-form-container .form-container h4 {
+  color: hsl(11deg, 88%, 59%);
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 15px;
+}
+#total-form-container .form-container h4 a {
+  cursor: pointer;
+  margin-inline: 7px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+#total-form-container .form-container h4 a:hover {
+  color: hsl(145deg, 62%, 42%);
+}
+
+/* .form-container::before {
+	content: '';
+	position: absolute;
+	top: 35px;
+	left: 142px;
+	height: 66%;
+	width: 70%;
+	border: 1px solid black;
+	background-color: $site-container-bgLight);
+	z-index: -2;
+	box-shadow: $box-shadow);
+} */
+/* #L-bracket path,#R-bracket path{
+    fill:$site-blue);
+} */
+/*************************************************************** FORM ends here *****************************************************/
+/*************************************************************** FLOATS starts here *****************************************************/
+#great-floats-container {
+  position: relative;
+  bottom: 5rem;
+  padding-block: 9%;
+  padding-inline: 7%;
+  background-color: #EFECFD;
+}
+#great-floats-container .floats-container {
+  display: flex;
+  gap: 4%;
+}
+#great-floats-container .float-img-container {
+  flex-basis: 45%;
+}
+#great-floats-container .float-img-container img {
+  object-fit: contain;
+  width: 100%;
+}
+#great-floats-container .float-text-container h4 {
+  color: hsl(11deg, 88%, 59%);
+  word-spacing: 1.5px;
+}
+#great-floats-container .float-text-container > div:first-child {
+  display: flex;
+  gap: 5px;
+}
+#great-floats-container .float-text-container hr {
+  background-color: hsl(145deg, 62%, 42%);
+  height: 1.2px;
+  width: 15%;
+  align-self: center;
+}
+#great-floats-container .float-text-container h2 {
+  margin-bottom: 15px;
+  color: hsl(221deg, 52%, 26%);
+  word-spacing: 2px;
+  font-size: 2rem;
+}
+#great-floats-container .float-text-container > p {
+  margin-bottom: 10px;
+  color: hsl(0deg, 0%, 30%);
+  font-size: 15px;
+  word-spacing: 1.2px;
+}
+#great-floats-container .float-text-container > div:nth-last-child(2) > p {
+  color: hsl(0deg, 0%, 40%);
+  font-size: 14px;
+}
+#great-floats-container .float-text-container div i {
+  margin-right: 13px;
+  color: hsl(145deg, 62%, 42%);
+}
+#great-floats-container .float-text-container .float-feature-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 10px;
+}
+#great-floats-container .float-text-container .float-feature-container h1 {
+  color: hsl(145deg, 62%, 42%);
+  font-size: 1.7rem;
+}
+#great-floats-container .float-text-container .float-feature-container p {
+  color: hsl(0deg, 0%, 40%);
+  font-size: 13.3px;
+  line-height: 1rem;
+}
+
+/*************************************************************** FLOATS ends here *****************************************************/
+/*************************************************************** COMPANIES starts here *****************************************************/
+/* #company-container{
+    padding-inline:$padding-inlin;
+}
+#company-container h2{
+    text-align:center;
+    margin-bottom:3%;
+    letter-spacing:0.4px;
+    word-spacing:4px;
+    text-transform:capitalize;
+    color:$site-blue);
+}
+.company-logos{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    row-gap:10%;
+    column-gap:5%;
+    justify-items:start;
+    animation-name:flow;
+}
+.company-logos img{
+    height:4rem;
+} */
+#company-container h1 {
+  text-align: center;
+  margin-bottom: 4%;
+  letter-spacing: 0.4px;
+  word-spacing: 4px;
+  text-transform: capitalize;
+  color: hsl(221deg, 52%, 26%);
+  font-size: 2rem;
+  font-weight: 700;
+}
+#company-container .company-logos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+#company-container .company-logos div {
+  display: flex;
+  gap: 11%;
+  white-space: nowrap;
+  animation-name: flow;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-timing-function: linear;
+  overflow-x: visible;
+}
+#company-container .company-logos div:nth-child(2) {
+  display: flex;
+  gap: 11%;
+  white-space: nowrap;
+  animation-name: flow;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-timing-function: linear;
+  animation-direction: reverse;
+  overflow-x: visible;
+}
+#company-container .company-logos div img {
+  height: 4rem;
+  overflow-x: visible;
+}
+
+@keyframes flow {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+/*************************************************************** COMPANIES ends here *****************************************************/
+/*************************************************************** POPULAR COURSES starts here *****************************************************/
+#popular-courses-container {
+  padding-top: 10%;
+  padding-inline: 7%;
+}
+#popular-courses-container h1 {
+  color: hsl(221deg, 52%, 26%);
+  font-size: 1.9rem;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.4px;
+  word-spacing: 4px;
+  font-weight: 700;
+}
+#popular-courses-container > h5 {
+  color: hsl(0deg, 0%, 40%);
+  text-align: center;
+  margin-top: 0.2rem;
+}
+#popular-courses-container .course-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.5rem;
+  row-gap: 2rem;
+}
+#popular-courses-container .course-grid .course {
+  position: relative;
+  width: 27rem;
+  border-radius: 10px;
+  background-color: #EFECFD;
+  box-shadow: 0 2px 3px 2px #eee;
+}
+#popular-courses-container .course-grid .course .course-img-container {
+  /* height:75%; */
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow-x: clip;
+}
+#popular-courses-container .course-grid .course .course-img-container img {
+  height: 15rem;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#popular-courses-container .course-grid .course #calender {
+  padding-left: 4px;
+}
+#popular-courses-container .course-grid .course #calender i {
+  font-size: 13px;
+  color: hsl(11deg, 88%, 59%);
+}
+#popular-courses-container .course-grid .course #calender span {
+  font-size: 11px;
+  color: hsl(0deg, 0%, 40%);
+}
+#popular-courses-container .course-grid .course .course-text-container {
+  margin-top: 0.5rem;
+  padding-left: 4px;
+  padding-right: 4rem;
+  padding-bottom: 5px;
+  height: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+}
+#popular-courses-container .course-grid .course .course-text-container > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#popular-courses-container .course-grid .course .course-text-container > div:first-child h4 {
+  text-transform: capitalize;
+  line-height: 1.3rem;
+  word-spacing: 1px;
+  color: hsl(221deg, 52%, 26%);
+}
+#popular-courses-container .course-grid .course .course-text-container > div:first-child h5 {
+  font-size: 13px;
+  font-weight: 450;
+  color: hsl(0deg, 0%, 40%);
+}
+#popular-courses-container .course-grid .course .course-text-container > div:last-child {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+#popular-courses-container .course-grid .course .course-text-container > div:last-child span {
+  color: hsl(145deg, 62%, 42%);
+}
+#popular-courses-container .course-grid .course .course-text-container > div:last-child span:first-child {
+  font-size: 17px;
+  font-weight: 500;
+}
+#popular-courses-container .course-grid .course .course-text-container > div:last-child span i {
+  font-size: 14px;
+  margin-right: -4px;
+}
+#popular-courses-container .course-grid .course .course-text-container > div:last-child span:last-child {
+  font-size: 13px;
+  color: hsl(0deg, 0%, 40%);
+}
+#popular-courses-container .course-grid .course .price {
+  position: absolute;
+  right: 2rem;
+  top: 13.2rem;
+  padding: 0.9rem;
+  border-radius: 25px;
+  color: hsl(11deg, 88%, 59%);
+  background-color: hsl(221deg, 52%, 26%);
+  font-weight: bold;
+}
+
+/*************************************************************** POPULAR COURSES ends here *****************************************************/
+/*************************************************************** CREDENTIALS starts here *****************************************************/
+#credentials {
+  margin-top: 10%;
+  height: 300px;
+  position: relative;
+  background-image: url("Images/class1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#credentials::before {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  background-color: hsla(221deg, 52%, 26%, 0.4);
+}
+#credentials .credentials-items {
+  z-index: 2;
+}
+#credentials .credentials-items .credentials-items-wrapper {
+  height: 100%;
+  padding-inline: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25%;
+}
+#credentials .credentials-items .credentials-items-wrapper:last-child {
+  margin-top: 1rem;
+}
+#credentials .credentials-items .credentials-items-wrapper > div {
+  display: flex;
+  gap: 1rem;
+}
+#credentials .credentials-items .credentials-items-wrapper > div i {
+  font-size: 3rem;
+  align-self: center;
+  color: hsl(11deg, 88%, 59%);
+}
+#credentials .credentials-items .credentials-items-wrapper > div span {
+  font-size: 2rem;
+  color: #fff;
+}
+#credentials .credentials-items .credentials-items-wrapper > div h5 {
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: initial;
+  color: #fff;
+}
+
+/*************************************************************** CREDENTIALS ends here *****************************************************/
+
+/*# sourceMappingURL=style1.css.map */

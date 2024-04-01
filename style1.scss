@@ -1,0 +1,693 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap'); */
+
+
+*{
+    margin:0;
+    padding:0;
+    outline:none;
+    border:none;
+    font-family:'Poppins',sans-serif;
+    box-sizing:border-box;
+    
+}
+
+    $site-green:hsl(145, 62%, 42%);            /* #28AD60 rgb(40,173,96) hsl(145, 62%, 42%) */
+    $site-blue:hsl(221, 52%, 26%);             /* #192B51 rgb(25,43,81) hsl(221, 52%, 21%) */
+    $site-grey:hsl(0, 0%, 40%);                /* #666666 rgb(102,102,102) hsl(0, 0%, 40%) */
+    // $site-black:hsl(232,12,12);                /* #1D1E25 rgb(29,30,37) hsl(232,12,12) */
+    $site-orange:hsl(11,88%,59%);              /* #F3603C rgb(243,96,60) hsl(11,88%,59%) */  
+    $site-container-bgLight:#f5f7fb;           /* #f5f7fb rgb(245,247,251) hsl(220,42%,97%) */
+    $site-violet-light:#EFECFD;                /* #EFECFD rgb(239,236,253) hsl(250,80%,95%) */
+
+    $site-orange-light:hsl(12,100%,96%);       /* #FFEFEB rgb(255,239,235) hsl(12,100%,96%); */ 
+    $site-blue-variety:hsl(206,56%,21%);       /* #183b56 rgb(24,59,86) hsl(206,56%,21%) */
+    $site-blue-light:hsl(209,25%,45%);         /* #577592 rgb(87,117,146) hsl(209,25%,45%) */
+    $site-blue-dark:hsl(228,39%,23%);          /* #232C51 rgb(35,44,81) hsl(228,39%,23%) */
+    $site-blue-button:hsl(206,84%,53%);        /* #2294ed rgb(34,148,27) hsl(206,84%,53%) */
+
+
+    $padding-inline:7%;
+    $padding-block:10px;
+    $box-shadow:0 2px 3px 2px #eee;
+
+html{
+    scroll-behavior:smooth;
+}
+body{
+    overflow-x:hidden;
+}
+/*************************************************************** MENU starts here *****************************************************/
+
+#menuIcon path{
+    &:nth-child(1){
+        fill:$site-green;
+    }
+    &:nth-child(3){
+        fill:$site-green;
+    }
+    &:nth-child(4){
+        fill:$site-green;
+    }
+    &:nth-child(8){
+        fill:$site-green;
+    }
+    &:nth-child(9){
+        fill:$site-green;
+    }
+}
+
+#menu{
+    position:fixed;
+    width:100vw;
+    height:8%;
+    padding-inline:$padding-inline;
+    padding-block:$padding-block;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color:transparent;     
+    z-index:20;            /* #f5f7fb */
+    backdrop-filter:blur(0.2rem);
+    padding-bottom: 1%;
+
+    .iconContainer {
+        display:flex;
+        align-items:center;
+        #logo {
+            height:40px;
+            width:10%;
+        }
+        a{
+            cursor:pointer;
+            text-decoration:none;
+
+            strong{
+                font-size:20px;
+                letter-spacing:0.6px;
+                color:$site-blue;
+                &::first-letter{
+                    font-size:23px;
+                    color:$site-green;
+                }
+                span{
+                    margin-left:2px;
+                    position:relative;
+                    &::before {
+                        content: '';
+                        position:absolute;
+                        bottom:0;
+                        right:0;
+                        height:100%;
+                        width:107%;
+                        border-radius:5px;
+                        background-color:$site-orange;
+                        z-index:-1;
+                    }
+                }
+            }
+        }
+    }
+    .menuContainer{
+        flex-basis:50%;
+
+        .menuList li{
+            list-style-type:none;
+            display:inline-block;
+            .active{
+                color:$site-green;
+            }
+            a{
+                text-decoration:none;
+                margin-right:25px;
+                text-transform:capitalize;
+                font-size:15px;
+                color:$site-grey;
+                cursor:pointer;
+                padding: 4.5px;
+                border-radius: 8px;
+                transition:0.3s;
+                
+                &:hover{
+                    color:#fff;
+                    background-color:$site-green;
+                }
+            }
+        }
+    }
+    .ctaContainer i {
+        color: $site-blue;
+        margin-left: 15px;
+        font-size: 17px;
+        border-radius: 16px;
+        padding: 6px;
+        background-color: #eee;
+        transition:0.2s;
+
+        &:hover{
+            color:$site-orange;
+            transform:scale(120%);
+        }
+    }
+}
+
+/*************************************************************** MENU ends here *****************************************************/
+
+/*************************************************************** INTRO starts here *****************************************************/
+
+#intro{
+    padding-inline:$padding-inline;
+    display:flex;
+    align-items:center;
+    width:100vw;
+    height:100vh;
+    background-image: url('Images/home-image7.png');
+    background-size:cover;
+
+    .introText-container{
+    h3{
+      color:$site-green;
+      font-size:13px;
+      font-weight:bold;
+      position:relative;
+    }
+    h1{
+      color:$site-blue;
+      margin:1px 0 20px;
+      font-size:2.4rem;
+      text-transform:capitalize;
+    }
+    p{
+        color:$site-grey;
+        font-size:15px;
+        word-spacing:1px;
+        margin-bottom:20px;
+    }
+    .subheader-Container{
+        display:flex;
+        align-items:center;
+        gap:5px;
+
+        hr{
+            display:inline-block;
+            height:0.9px;
+            width:5%;
+            background-color:$site-green;
+        }
+    }
+    .buttonContainer{
+        display:flex;
+        align-items:center;
+        gap:30px;
+
+        a{
+            padding:11px;
+            background-color:$site-green;
+            border-radius:9px;
+            color:#fff;
+            border:2px solid transparent;
+            font-weight:600;
+            letter-spacing:0.1px;
+            transition:0.2s;
+
+            &:hover{
+                background-color:#fff;
+                color: $site-orange;
+                border-color:$site-green;
+            }
+        }
+        i{
+            font-size: 13px;
+            margin-left: 6px;
+        }
+    }
+  }
+  .introImg-container{
+    height:100vh;
+ }
+}
+
+/*************************************************************** INTRO ends here *****************************************************/
+
+/*************************************************************** FORM starts here *****************************************************/
+/* #form-container {
+	position: relative;
+	left: 25%;
+	bottom: 50px;
+	z-index: 1;
+	width: 50vw;
+	height: 500px; 
+    border: 1px solid hsl(11,88%,89%);
+    border:2px solid black; 
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	padding-block: 10px;
+	padding-inline: 100px;
+	border-radius: 15px;
+	backdrop-filter: blur(65px);
+	background-color: #fff;
+	box-shadow: 0 4px 5px hsl(11,88%,89%);
+	transform: perspective(65px) translateZ(10px); 
+    border-image-source:url(Images/curly-bracket.svg);
+    border-image-repeat:stretch;
+} */
+
+#total-form-container {
+	position: relative;
+	left: 25%;           /* 17% */  /* 25% */
+	bottom: 3rem;       /* 106px */  /* 40px */
+	z-index: 1;
+	width: 50vw;        /* 55vw */  /* 50vw */ 
+   	display: flex;
+	flex-direction: column;     /* no flex-direction */
+	gap: 15px;
+	padding-block: 30px;
+	padding-inline: 100px;
+	border-radius: 15px;
+	background-color:$site-container-bgLight;     /* No Bg */
+    box-shadow:$box-shadow;
+
+    .form-container{
+        display:flex;
+        flex-direction: column;
+        align-self:center;
+
+        h3 {
+            color: $site-blue;
+            background-color:$site-violet-light;
+            display: inline-block;
+            width: 22%;
+            padding: 7px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            /* margin-right: -82px; */
+            font-size: 20px;
+        }
+        .login-form{
+            display:flex;
+            gap:15px;
+
+            input{
+                border-bottom: 2px solid $site-green;
+                &::placeholder{ 
+                    color: $site-grey;
+                    font-size: 13px;
+                }
+            }
+            a{
+                text-decoration:none;
+                padding:6px 35px;
+                margin-left:20px;
+                background-color:$site-green;
+                border:2px solid transparent;
+                border-radius:9px;
+                color:#fff;
+                font-weight:600;
+                letter-spacing:0.1px;
+                transition:0.2s;
+            }
+            &:hover{
+                background-color:#fff;
+                color: $site-orange;
+                border-color: $site-green;
+            }
+        }
+        h4 {
+            color: $site-orange;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 15px;
+            a {
+                cursor: pointer;
+                margin-inline: 7px;
+                text-decoration: none;
+                transition:0.2s;
+                &:hover{
+                    color:$site-green;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* .form-container::before {
+	content: '';
+	position: absolute;
+	top: 35px;
+	left: 142px;
+	height: 66%;
+	width: 70%;
+	border: 1px solid black;
+	background-color: $site-container-bgLight);
+	z-index: -2;
+	box-shadow: $box-shadow);
+} */
+/* #L-bracket path,#R-bracket path{
+    fill:$site-blue);
+} */
+
+/*************************************************************** FORM ends here *****************************************************/
+/*************************************************************** FLOATS starts here *****************************************************/
+
+#great-floats-container{
+    position:relative;
+    bottom:5rem;
+    padding-block:9%;
+    padding-inline:$padding-inline;
+    background-color:$site-violet-light;
+    .floats-container{
+        display:flex;
+        gap:4%;
+    }
+    .float-img-container{
+        flex-basis:45%;
+        img{
+            object-fit:contain;
+            width:100%;
+        }
+    }
+    .float-text-container{
+        h4{
+            color:$site-orange; 
+            word-spacing:1.5px;
+        }
+        &> div:first-child{
+            display:flex;
+            gap:5px;;
+        }
+        hr{
+            background-color:$site-green;
+            height:1.2px;
+            width:15%;
+            align-self:center;
+        }
+        h2{
+            margin-bottom:15px;
+            color:$site-blue;
+            word-spacing:2px;
+            font-size:2rem;
+        }
+        &>p{
+            margin-bottom:10px;
+            color:hsl(0, 0%, 30%);
+            font-size:15px;
+            word-spacing:1.2px;
+        }
+        &> div:nth-last-child(2)>p {
+            color:$site-grey;
+            font-size:14px;
+        
+        }
+        div i{
+            margin-right:13px;
+            color:$site-green;
+        }
+        .float-feature-container{
+            display:flex;
+            gap:2rem;
+            margin-top:10px;
+
+            h1{
+                color:$site-green;
+                font-size:1.7rem;
+            }
+            p{
+                color:$site-grey;
+                font-size:13.3px;
+                line-height:1rem;
+            }
+            
+        }
+    }
+}
+
+/*************************************************************** FLOATS ends here *****************************************************/
+/*************************************************************** COMPANIES starts here *****************************************************/
+
+/* #company-container{
+    padding-inline:$padding-inlin;
+}
+#company-container h2{
+    text-align:center;
+    margin-bottom:3%;
+    letter-spacing:0.4px;
+    word-spacing:4px;
+    text-transform:capitalize;
+    color:$site-blue);
+}
+.company-logos{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    row-gap:10%;
+    column-gap:5%;
+    justify-items:start;
+    animation-name:flow;
+}
+.company-logos img{
+    height:4rem;
+} */
+
+// #company-container{
+//     /* padding-inline:$padding-inline); */
+// }
+#company-container{
+    h1{
+        text-align:center;
+        margin-bottom:4%;
+        letter-spacing:0.4px;
+        word-spacing:4px;
+        text-transform:capitalize;
+        color:$site-blue;
+        font-size:2rem;
+        font-weight:700;
+    }
+    .company-logos{
+        display:flex;
+        flex-direction:column;
+        gap:2rem;
+        overflow:hidden;
+        position: relative;
+
+        div{
+            display:flex;
+            gap:11%;
+            white-space:nowrap;
+            animation-name:flow;
+            animation-duration:40s;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            animation-timing-function:linear;
+            overflow-x: visible;
+
+            &:nth-child(2){
+                display:flex;
+                gap:11%;
+                white-space:nowrap;
+                animation-name:flow;
+                animation-duration:20s;
+                animation-iteration-count: infinite;
+                animation-play-state: running;
+                animation-timing-function:linear;
+                animation-direction:reverse;
+                overflow-x: visible;
+            }
+            img{
+                height:4rem;
+                overflow-x:visible;
+            }
+            
+        }
+    }
+} 
+
+@keyframes flow{
+    from{
+        transform:translateX(0%);
+    }
+   to{
+        transform:translateX(-100%);
+    }
+}
+/*************************************************************** COMPANIES ends here *****************************************************/
+/*************************************************************** POPULAR COURSES starts here *****************************************************/
+#popular-courses-container{
+    padding-top:10%;
+    padding-inline:$padding-inline;
+    h1{
+        color:$site-blue;
+        font-size:1.9rem;
+        text-align:center;
+        text-transform:capitalize;
+        letter-spacing:0.4px;
+        word-spacing:4px;
+        font-weight:700;
+    }
+    &>h5{
+        color:$site-grey;
+        text-align:center;
+        margin-top:0.2rem;
+    }
+    .course-grid{
+        margin-top:3rem;
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        column-gap:1.5rem;
+        row-gap:2rem;
+
+        .course{
+            position:relative;
+            width:27rem;
+            border-radius:10px;
+            background-color:$site-violet-light;
+            box-shadow:$box-shadow;
+
+            .course-img-container{
+                /* height:75%; */
+                width:100%;
+                border-top-left-radius:10px;
+                border-top-right-radius:10px;
+                overflow-x:clip;
+                img{
+                    height:15rem;
+                    width:100%;
+                    object-fit:cover;
+                    border-top-left-radius:10px;
+                    border-top-right-radius:10px;
+                }
+            }
+            #calender{
+                padding-left:4px;
+                i{
+                    font-size:13px;
+                    color:$site-orange;
+                }
+                span{
+                    font-size:11px;
+                    color:$site-grey;
+                }
+            }
+            .course-text-container{
+                margin-top:0.5rem;
+                padding-left:4px;
+                padding-right:4rem;
+                padding-bottom:5px;
+                height:7rem;
+                display:flex;
+                flex-direction:column;
+                gap:10px;
+                justify-content:space-between;
+                &>div:first-child{
+                    display:flex;
+                    flex-direction:column;
+                    gap:10px;
+                    h4{
+                        text-transform:capitalize;
+                        line-height:1.3rem;
+                        word-spacing:1px;
+                        color:$site-blue;
+                    }
+                    h5{
+                        font-size:13px;
+                        font-weight:450;
+                        color:$site-grey;
+                    }
+                }
+
+                &>div:last-child{
+                    display:flex;
+                    align-items:baseline;
+                    gap:5px;
+                    span{
+                        color:$site-green;
+                        &:first-child{
+                            font-size:17px;
+                            font-weight:500;
+                        }
+                        i{
+                            font-size:14px;
+                            margin-right:-4px;
+                        }
+                        &:last-child{
+                            font-size:13px;
+                            color:$site-grey;
+                        }
+                    }
+                }
+            }
+            .price{
+                position:absolute;
+                right:2rem;
+                top:13.2rem;
+                padding:0.9rem;
+                border-radius:25px;
+                color:$site-orange;
+                background-color:$site-blue;
+                font-weight:bold;
+            }
+        }
+    }
+}
+
+/*************************************************************** POPULAR COURSES ends here *****************************************************/
+/*************************************************************** CREDENTIALS starts here *****************************************************/
+#credentials{
+    margin-top:10%;
+    height:300px;
+    position:relative;
+    background-image:url('Images/class1.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:0 50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    &::before{
+        content:'';
+        position:absolute;
+        bottom:0%;
+        left:0%;
+        height:100%;
+        width:100%;
+        background-color:hsla(221, 52%, 26%, 0.4);
+    }
+    .credentials-items{
+        z-index:2;
+        .credentials-items-wrapper{
+            height:100%;
+            padding-inline:$padding-inline;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:25%;
+            &:last-child{
+                margin-top:1rem;
+            }
+            &>div{
+                display:flex;
+                gap:1rem;    
+                i{
+                    font-size:3rem;
+                    align-self:center;
+                    color:$site-orange;
+                }
+                span{
+                    font-size:2rem;
+                    color:#fff;
+                }
+                h5{
+                    white-space:nowrap;
+                    font-size:15px;
+                    font-weight:initial;
+                    color:#fff;
+                }
+            }
+        }
+    }
+}
+
+/*************************************************************** CREDENTIALS ends here *****************************************************/
+

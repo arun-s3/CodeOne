@@ -125,3 +125,22 @@ document.querySelectorAll("#student-reviews .reviews-grid .review-card").forEach
     card.style.transform = "translate(0,0)"
   });
 });
+
+
+const floatSections = document.querySelectorAll("#great-floats-container .floats-container");
+const floatoObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("reveal");
+        floatoObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.3
+  }
+);
+
+floatSections.forEach(section => floatoObserver.observe(section));
+

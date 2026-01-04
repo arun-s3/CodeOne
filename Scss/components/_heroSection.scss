@@ -1,0 +1,88 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/animations' as *;
+
+
+#intro{
+    padding-inline:$padding-inline;
+    display:flex;
+    align-items:center;
+    width:100vw;
+    height:100vh;
+    background-image: url('Images/home-image7.png');
+    background-size:cover;
+    transition: transform 5.5s ease-in 1.5s;
+
+    .introText-container{
+        cursor: default;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: introReveal 0.7s ease-out forwards;
+
+    h3{
+      color:$site-green;
+      font-size:13px;
+      font-weight:bold;
+      position:relative;
+      animation-delay: 0.1s;
+    }
+    h1{
+      color:$site-blue;
+      margin:1px 0 20px;
+      font-size:2.4rem;
+      text-transform:capitalize;
+      animation-delay: 0.2s;
+    }
+    p{
+        color:$site-grey;
+        font-size:15px;
+        word-spacing:1px;
+        margin-bottom:20px;
+        animation-delay: 0.3s;
+    }
+    .subheader-Container{
+        display:flex;
+        align-items:center;
+        gap:5px;
+
+        hr{
+            display:inline-block;
+            height:0.9px;
+            width:5%;
+            background-color:$site-green;
+        }
+    }
+    .buttonContainer{
+        position: relative;
+        display:flex;
+        align-items:center;
+        gap:30px;
+        animation-delay: 0.4s;
+        animation: ctaFloat 3s ease-in-out infinite;
+
+        a{
+            padding:11px;
+            background-color:$site-green;
+            border-radius:9px;
+            color:#fff;
+            border:2px solid transparent;
+            font-weight:600;
+            letter-spacing:0.1px;
+            cursor: pointer;
+            transition:0.2s;
+
+            &:hover{
+                background-color:#fff;
+                color: $site-orange;
+                border-color:$site-green;
+            }
+        }
+        i{
+            font-size: 13px;
+            margin-left: 6px;
+        }
+    }
+  }
+  .introImg-container{
+    height:100vh;
+ }
+}

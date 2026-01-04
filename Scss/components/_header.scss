@@ -1,0 +1,135 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/animations' as *;
+
+
+#menuIcon path{
+    &:nth-child(1){
+        fill:$site-green;
+    }
+    &:nth-child(3){
+        fill:$site-green;
+    }
+    &:nth-child(4){
+        fill:$site-green;
+    }
+    &:nth-child(8){
+        fill:$site-green;
+    }
+    &:nth-child(9){
+        fill:$site-green;
+    }
+}
+
+#menu{
+    position:fixed;
+    width:100vw;
+    height:8%;
+    padding-inline:$padding-inline;
+    padding-block:$padding-block;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color:transparent;     
+    z-index:20;            /* #f5f7fb */
+    backdrop-filter:blur(0.2rem);
+    padding-bottom: 1%;
+    animation: headerDrop 0.6s ease-out forwards;
+    transform: translateY(-100%);
+
+    .iconContainer{
+        display:flex;
+        align-items:center;
+        #logo{
+            height:40px;
+            width:10%;
+        }
+        a{
+            cursor:pointer;
+            text-decoration:none;
+
+            strong{
+                font-size:20px;
+                letter-spacing:0.6px;
+                color:$site-blue;
+                &::first-letter{
+                    font-size:23px;
+                    color:$site-green;
+                }
+                span{
+                    margin-left:2px;
+                    position:relative;
+                    &::before{
+                        content: '';
+                        position:absolute;
+                        bottom:0;
+                        right:0;
+                        height:100%;
+                        width:107%;
+                        border-radius:5px;
+                        background-color:$site-orange;
+                        z-index:-1;
+                    }
+                }
+            }
+        }
+    }
+    .menuContainer{
+        flex-basis:50%;
+
+        .menuList li{
+            list-style-type:none;
+            display:inline-block;
+            .active{
+                color:$site-green;
+            }
+            a{  
+                position: relative;       
+                text-decoration:none;
+                margin-right:25px;
+                text-transform:capitalize;
+                font-size:15px;
+                color:$site-grey;
+                cursor:pointer;
+                padding: 4.5px;
+                border-radius: 8px;
+                transition:0.3s;
+                
+                &:hover{
+                    color:#fff;
+                    background-color:$site-green;
+                }
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: -13px;
+                    left: 50%;
+                    width: 0;
+                    height: 2px;
+                    background-color: $site-green;
+                    transition: 0.3s ease;
+                    transform: translateX(-50%);
+                }               
+                &:hover::after,
+                &.active::after{
+                    width: 70%;
+                }
+            }
+        }
+    }
+    .ctaContainer i{
+        color: $site-blue;
+        margin-left: 15px;
+        font-size: 17px;
+        border-radius: 16px;
+        padding: 6px;
+        background-color: #eee;
+        cursor: pointer;
+        transition:0.2s;
+
+        &:hover{
+            color:$site-orange;
+            transform:scale(120%);
+        }
+    }
+}
+

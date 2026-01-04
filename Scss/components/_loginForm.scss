@@ -1,0 +1,94 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/animations' as *;
+
+
+#total-form-container{
+	position: relative;
+	left: 25%;           /* 17% */  /* 25% */
+	bottom: 3rem;       /* 106px */  /* 40px */
+	z-index: 1;
+	width: 50vw;        /* 55vw */  /* 50vw */ 
+   	display: flex;
+	flex-direction: column;     /* no flex-direction */
+	gap: 15px;
+	padding-block: 30px;
+	padding-inline: 100px;
+	border-radius: 15px;
+	background-color:$site-container-bgLight;     /* No Bg */
+    box-shadow:$box-shadow;
+    opacity: 0;
+    transform: scale(0.95) translateY(40px);
+    animation: formReveal 0.7s ease-out 0.6s forwards;
+
+    .form-container{
+        display:flex;
+        flex-direction: column;
+        align-self:center;
+
+        h3{
+            color: $site-blue;
+            background-color:$site-violet-light;
+            display: inline-block;
+            width: 22%;
+            padding: 7px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            /* margin-right: -82px; */
+            font-size: 20px;
+        }
+        .login-form{
+            display:flex;
+            gap:15px;
+
+            input{
+                border-bottom: 2px solid $site-green;
+                transition: box-shadow 0.2s ease;
+                &:focus{
+                  outline: none;
+                  background-color: hsl(146.4, 100%, 95.1%);
+                  border-top-left-radius: 8px;
+                  border-top-right-radius: 8px;
+                }
+                &::placeholder{ 
+                    color: $site-grey;
+                    font-size: 13px;
+                }
+            }
+            a{
+                text-decoration:none;
+                padding:6px 35px;
+                margin-left:20px;
+                background-color:$site-green;
+                border:2px solid transparent;
+                border-radius:9px;
+                color:#fff;
+                font-weight:600;
+                letter-spacing:0.1px;
+                transition:0.2s;
+                position: relative;
+                overflow: hidden;
+            }
+            &:hover{
+                background-color:#fff;
+                color: $site-orange;
+                border-color: $site-green;
+            }
+
+        }
+        h4{
+            color: $site-orange;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 15px;
+            a{
+                cursor: pointer;
+                margin-inline: 7px;
+                text-decoration: none;
+                transition:0.2s;
+                &:hover{
+                    color:$site-green;
+                }
+            }
+        }
+    }
+}

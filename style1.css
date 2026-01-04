@@ -1,12 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap'); */
 * {
   margin: 0;
   padding: 0;
   outline: none;
   border: none;
-  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, p, span {
+  cursor: default;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 /* #28AD60 rgb(40,173,96) hsl(145, 62%, 42%) */
@@ -20,19 +31,53 @@
 /* #577592 rgb(87,117,146) hsl(209,25%,45%) */
 /* #232C51 rgb(35,44,81) hsl(228,39%,23%) */
 /* #2294ed rgb(34,148,27) hsl(206,84%,53%) */
-html {
-  scroll-behavior: smooth;
+@keyframes headerDrop {
+  to {
+    transform: translateY(0);
+  }
 }
-
-h1, h2, h3, h4, h5, p, span {
-  cursor: default;
+@keyframes introReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-body {
-  overflow-x: hidden;
+@keyframes ctaFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
-
-/*************************************************************** MENU starts here *****************************************************/
+@keyframes formReveal {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+@keyframes imgFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes flow {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes courseFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 #menuIcon path:nth-child(1) {
   fill: hsl(145deg, 62%, 42%);
 }
@@ -156,13 +201,6 @@ body {
   transform: scale(120%);
 }
 
-@keyframes headerDrop {
-  to {
-    transform: translateY(0);
-  }
-}
-/*************************************************************** MENU ends here *****************************************************/
-/*************************************************************** INTRO starts here *****************************************************/
 #intro {
   padding-inline: 7%;
   display: flex;
@@ -243,44 +281,6 @@ body {
   height: 100vh;
 }
 
-@keyframes introReveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes ctaFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-/*************************************************************** INTRO ends here *****************************************************/
-/*************************************************************** FORM starts here *****************************************************/
-/* #form-container{
-	position: relative;
-	left: 25%;
-	bottom: 50px;
-	z-index: 1;
-	width: 50vw;
-	height: 500px; 
-    border: 1px solid hsl(11,88%,89%);
-    border:2px solid black; 
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
-	padding-block: 10px;
-	padding-inline: 100px;
-	border-radius: 15px;
-	backdrop-filter: blur(65px);
-	background-color: #fff;
-	box-shadow: 0 4px 5px hsl(11,88%,89%);
-	transform: perspective(65px) translateZ(10px); 
-    border-image-source:url(Images/curly-bracket.svg);
-    border-image-repeat:stretch;
-} */
 #total-form-container {
   position: relative;
   left: 25%; /* 17% */ /* 25% */
@@ -368,29 +368,6 @@ body {
   color: hsl(145deg, 62%, 42%);
 }
 
-@keyframes formReveal {
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-/* .form-container::before{
-	content: '';
-	position: absolute;
-	top: 35px;
-	left: 142px;
-	height: 66%;
-	width: 70%;
-	border: 1px solid black;
-	background-color: $site-container-bgLight);
-	z-index: -2;
-	box-shadow: $box-shadow);
-} */
-/* #L-bracket path,#R-bracket path{
-    fill:$site-blue);
-} */
-/*************************************************************** FORM ends here *****************************************************/
-/*************************************************************** FLOATS starts here *****************************************************/
 #great-floats-container {
   position: relative;
   bottom: 5rem;
@@ -523,38 +500,6 @@ body {
   line-height: 1rem;
 }
 
-@keyframes imgFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-/*************************************************************** FLOATS ends here *****************************************************/
-/*************************************************************** COMPANIES starts here *****************************************************/
-/* #company-container{
-    padding-inline:$padding-inlin;
-}
-#company-container h2{
-    text-align:center;
-    margin-bottom:3%;
-    letter-spacing:0.4px;
-    word-spacing:4px;
-    text-transform:capitalize;
-    color:$site-blue);
-}
-.company-logos{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    row-gap:10%;
-    column-gap:5%;
-    justify-items:start;
-    animation-name:flow;
-}
-.company-logos img{
-    height:4rem;
-} */
 #company-container h1 {
   text-align: center;
   margin-bottom: 4%;
@@ -600,16 +545,6 @@ body {
   overflow-x: visible;
 }
 
-@keyframes flow {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-/*************************************************************** COMPANIES ends here *****************************************************/
-/*************************************************************** POPULAR COURSES starts here *****************************************************/
 #popular-courses-container {
   padding-top: 10%;
   padding-inline: 7%;
@@ -730,14 +665,6 @@ body {
   animation: courseFadeUp 0.9s ease-out forwards;
 }
 
-@keyframes courseFadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/*************************************************************** POPULAR COURSES ends here *****************************************************/
-/*************************************************************** CREDENTIALS starts here *****************************************************/
 #credentials {
   margin-top: 10%;
   height: 300px;
@@ -799,7 +726,6 @@ body {
   color: #fff;
 }
 
-/*************************************************************** CERTIFIED TEACHERS SECTION *****************************************************/
 #certified-teachers {
   padding: 7%;
   padding-block: 5%;
@@ -931,7 +857,6 @@ body {
   margin-top: 5px;
 }
 
-/*************************************************************** STUDENT REVIEWS SECTION *****************************************************/
 #student-reviews {
   margin-bottom: 5rem;
   padding: 7%;
@@ -1051,7 +976,6 @@ body {
   margin: 0;
 }
 
-/*************************************************************** FOOTER SECTION *****************************************************/
 #footer {
   background: linear-gradient(135deg, hsl(228deg, 39%, 23%) 0%, hsl(221deg, 52%, 26%) 100%);
   color: #fff;

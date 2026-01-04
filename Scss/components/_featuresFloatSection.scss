@@ -1,0 +1,148 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/animations' as *;
+
+
+#great-floats-container{
+    position: relative;
+    bottom: 5rem;
+    padding-block: 9%;
+    padding-inline: $padding-inline;
+    background-color: $site-violet-light;
+
+    .floats-container{
+        display: flex;
+        gap: 4%;
+        opacity: 0;
+        transform: translateY(60px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+
+        &.reveal{
+            opacity: 1;
+            transform: translateY(0);
+            
+            .float-img-container{
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .float-text-container{
+                opacity: 1;
+                transform: translateX(0);
+                
+                > div:nth-last-child(2) p{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        
+            .float-feature-container div{
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        &[style*="row-reverse"]{
+            .float-img-container{
+                transform: translateX(60px);
+            }
+
+            .float-text-container{
+                transform: translateX(-60px);
+            }
+        }
+    }
+
+    .float-img-container{
+        flex-basis: 45%;
+        opacity: 0;
+        transform: translateX(-60px);
+        transition: 0.8s ease;    
+
+        img{
+            width: 100%;
+            object-fit: contain;
+            animation: imgFloat 6s ease-in-out infinite;
+        }
+    }
+
+    .float-text-container{
+        cursor: default;
+        opacity: 0;
+        transform: translateX(60px);
+        transition: 0.8s ease 0.1s;
+
+        h4{
+            color: $site-orange;
+            word-spacing: 1.5px;
+        }
+
+        & > div:first-child{
+            display: flex;
+            gap: 5px;
+        }
+
+        hr{
+            background-color: $site-green;
+            height: 1.2px;
+            width: 15%;
+            align-self: center;
+        }
+
+        h2{
+            margin-bottom: 15px;
+            color: $site-blue;
+            font-size: 2rem;
+            word-spacing: 2px;
+        }
+
+        & > p{
+            margin-bottom: 10px;
+            color: hsl(0, 0%, 30%);
+            font-size: 15px;
+            word-spacing: 1.2px;
+        }
+
+        & > div:nth-last-child(2) p{
+            color: $site-grey;
+            font-size: 14px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: 0.4s ease;  
+
+            &:nth-child(1){ transition-delay: 0.2s; }
+            &:nth-child(2){ transition-delay: 0.3s; }
+            &:nth-child(3){ transition-delay: 0.4s; }
+        }
+
+        i{
+            margin-right: 13px;
+            color: $site-green;
+        }
+
+        .float-feature-container{
+            display: flex;
+            gap: 2rem;
+            margin-top: 10px;   
+
+            div{
+                opacity: 0;
+                transform: scale(0.9);
+                transition: 0.4s ease;    
+                &:nth-child(1){ transition-delay: 0.2s; }
+                &:nth-child(2){ transition-delay: 0.3s; }
+                &:nth-child(3){ transition-delay: 0.4s; }
+            } 
+
+            h1{
+                color: $site-green;
+                font-size: 1.7rem;
+            }   
+
+            p{
+                color: $site-grey;
+                font-size: 13.3px;
+                line-height: 1rem;
+            }
+        }
+  }
+}

@@ -146,3 +146,120 @@
         }
   }
 }
+
+@media (max-width: 1024px){
+    #great-floats-container{
+        padding-inline: 6%;
+
+        .floats-container{
+            gap: 2.5rem;
+        }
+        .float-img-container{
+            flex-basis: 40%;
+
+            img{
+                animation: none
+            }
+        }
+        .float-text-container{
+            h2{
+                font-size: 1.7rem;
+            }
+            >p{
+                font-size: 14px;
+            }
+        }
+        .float-feature-container{
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media (max-width: 768px){
+    #great-floats-container{
+        .floats-container{
+            flex-direction: column !important;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+
+            // Kill horizontal reveal motion on mobile
+            &[style*="row-reverse"]{
+
+                .float-img-container,
+                .float-text-container{
+                    transform: none;
+                }
+            }
+        }
+        .float-img-container{
+            flex-basis: 100%;
+            max-width: 90%;
+            transform: none;
+            img{
+                width: 100%;
+            }
+        }
+        .float-text-container{
+            transform: none;
+            max-width: 100%;
+
+            >div:first-child{
+                justify-content: center;
+            }
+            hr{
+                width: 30px;
+            }
+            h2{
+                font-size: 1.5rem;
+            }
+            >p{
+                font-size: 14px;
+            }
+            i{
+                margin-right: 8px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    #great-floats-container{
+        .float-feature-container{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            justify-content: center;
+            justify-items: center;
+
+            div{
+                text-align: center;
+            }
+            h1{
+                font-size: 1.5rem;
+            }
+            p{
+                font-size: 13px;
+                line-height: 1.2;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px){
+    #great-floats-container{
+        .float-text-container{
+            h2{
+                font-size: 1.35rem;
+            }
+            >p{
+                font-size: 13px;
+            }
+        }
+        .float-feature-container{
+            grid-template-columns: 1fr;
+        }
+    }
+}
+

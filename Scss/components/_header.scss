@@ -29,6 +29,7 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
+    flex-wrap: nowrap;
     background-color:transparent;     
     z-index:20;            /* #f5f7fb */
     backdrop-filter:blur(0.2rem);
@@ -76,11 +77,16 @@
     .menuContainer{
         flex-basis:50%;
 
-        .menuList li{
-            list-style-type:none;
-            display:inline-block;
-            .active{
+        .menuList{ 
+            white-space: nowrap;
+
+            li{
+                list-style-type:none;
+                display:inline-block;
+
+                .active{
                 color:$site-green;
+                }
             }
             a{  
                 position: relative;       
@@ -116,20 +122,143 @@
             }
         }
     }
-    .ctaContainer i{
-        color: $site-blue;
-        margin-left: 15px;
-        font-size: 17px;
-        border-radius: 16px;
-        padding: 6px;
-        background-color: #eee;
-        cursor: pointer;
-        transition:0.2s;
 
-        &:hover{
-            color:$site-orange;
-            transform:scale(120%);
+    .menuContainer.active{
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 1.5rem 0;
+        box-shadow: $box-shadow;
+
+        .menuList{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            li{
+                margin: 12px 0;
+            }
         }
     }
+    .menuContainer.active + .hamburger span:nth-child(1){
+        transform: rotate(58deg) translateY(9px) scale(57%);
+    }
+    .menuContainer.active + .hamburger span:nth-child(2){
+        opacity: 0;
+    }
+    .menuContainer.active + .hamburger span:nth-child(3){
+        transform: rotate(-51deg) translateY(-13px) scale(57%) translateX(6px);
+    }
+
+    .hamburger{
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+
+        span{
+            width: 25px;
+            height: 3px;
+            background-color: $site-blue;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+    }
+    .ctaContainer{ 
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        i{
+            color: $site-blue;
+            margin-left: 15px;
+            font-size: 17px;
+            border-radius: 16px;
+            padding: 6px;
+            background-color: #eee;
+            cursor: pointer;
+            transition:0.2s;
+
+            &:hover{
+                color:$site-orange;
+                transform:scale(120%);
+            }
+        }
+    }
+
+    @media (max-width: 1024px){
+        #menu{
+            padding-inline: 5%;
+        }
+        .menuContainer{
+            flex-basis: auto;
+        }
+        .menuList li a{
+            margin-right: 15px;
+            font-size: 14px;
+        }
+        .ctaContainer i{
+            margin-left: 10px;
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 900px){
+        #menu{
+            padding-inline: 1.2rem;
+            height: auto;
+        }
+        .menuContainer{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            transform: translateY(-20px);
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.3s ease;
+        }
+        .menuContainer.active{
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }   
+        .menuList{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem 0;
+        
+            li{
+                margin: 10px 0;
+            }
+        }   
+        .ctaContainer{
+            display: none;
+        }    
+        .hamburger{
+            display: flex;
+        }
+    }
+
+    @media (max-width: 768px){
+        .menuContainer,
+        .ctaContainer{
+            display: none;
+        }
+        .hamburger{
+            display: flex;
+        }
+    }
+
+    @media (max-width: 480px){
+        height: 4%;
+    }
+
 }
 

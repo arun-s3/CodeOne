@@ -28,7 +28,7 @@
 
         .course{
             position:relative;
-            width:27rem;
+            width:100%;
             border-radius:10px;
             background-color:$site-violet-light;
             box-shadow:$box-shadow;
@@ -124,3 +124,111 @@
         }
     }
 }
+
+@media (max-width: 1024px){
+  #popular-courses-container{
+    padding-top: 12%;
+
+    h1{
+      font-size: 1.7rem;
+    }
+
+    .course-grid{
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1.2rem;
+    }
+
+    .course{
+      .course-img-container img{
+        height: 14rem;
+      }
+
+      .price{
+        top: 12.5rem;
+        right: 1.5rem;
+        padding: 0.7rem;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px){
+  #popular-courses-container{
+    padding-inline: 6%;
+    padding-top: 15%;
+
+    h1{
+      font-size: 1.5rem;
+      line-height: 1.3;
+    }
+
+    h5{
+      font-size: 14px;
+    }
+
+    .course-grid{
+      grid-template-columns: 1fr;
+      row-gap: 2rem;
+    }
+
+    .course{
+      .course-img-container img{
+        height: 13rem;
+      }
+
+      .course-text-container{
+        padding-right: 1.5rem;
+        height: auto;
+      }
+
+      .price{
+        top: 12rem;
+        right: 1.2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px){
+  #popular-courses-container{
+    padding-top: 18%;
+
+    h1{
+      font-size: 1.3rem;
+    }
+
+    h5{
+      font-size: 13px;
+    }
+
+    .course{
+      border-radius: 8px;
+
+      .course-img-container img{
+        height: 11.5rem;
+      }
+
+      .course-text-container{
+        gap: 8px;
+
+        h4{
+          font-size: 14px;
+          line-height: 1.25;
+        }
+
+        h5{
+          font-size: 12px;
+        }
+      }
+
+      .price{
+        top: 10.8rem;
+        right: 1rem;
+        padding: 0.6rem;
+        font-size: 13px;
+      }
+    }
+  }
+}
+

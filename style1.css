@@ -1014,7 +1014,7 @@ body {
 }
 #popular-courses-container .course-grid .course {
   position: relative;
-  width: 27rem;
+  width: 100%;
   border-radius: 10px;
   background-color: #EFECFD;
   box-shadow: 0 2px 3px 2px #eee;
@@ -1107,9 +1107,93 @@ body {
   animation: courseFadeUp 0.9s ease-out forwards;
 }
 
+@media (max-width: 1024px) {
+  #popular-courses-container {
+    padding-top: 12%;
+  }
+  #popular-courses-container h1 {
+    font-size: 1.7rem;
+  }
+  #popular-courses-container .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.2rem;
+  }
+  #popular-courses-container .course .course-img-container img {
+    height: 14rem;
+  }
+  #popular-courses-container .course .price {
+    top: 12.5rem;
+    right: 1.5rem;
+    padding: 0.7rem;
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  #popular-courses-container {
+    padding-inline: 6%;
+    padding-top: 15%;
+  }
+  #popular-courses-container h1 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  #popular-courses-container h5 {
+    font-size: 14px;
+  }
+  #popular-courses-container .course-grid {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+  #popular-courses-container .course .course-img-container img {
+    height: 13rem;
+  }
+  #popular-courses-container .course .course-text-container {
+    padding-right: 1.5rem;
+    height: auto;
+  }
+  #popular-courses-container .course .price {
+    top: 12rem;
+    right: 1.2rem;
+  }
+}
+@media (max-width: 480px) {
+  #popular-courses-container {
+    padding-top: 18%;
+  }
+  #popular-courses-container h1 {
+    font-size: 1.3rem;
+  }
+  #popular-courses-container h5 {
+    font-size: 13px;
+  }
+  #popular-courses-container .course {
+    border-radius: 8px;
+  }
+  #popular-courses-container .course .course-img-container img {
+    height: 11.5rem;
+  }
+  #popular-courses-container .course .course-text-container {
+    gap: 8px;
+  }
+  #popular-courses-container .course .course-text-container h4 {
+    font-size: 14px;
+    line-height: 1.25;
+  }
+  #popular-courses-container .course .course-text-container h5 {
+    font-size: 12px;
+  }
+  #popular-courses-container .course .price {
+    top: 10.8rem;
+    right: 1rem;
+    padding: 0.6rem;
+    font-size: 13px;
+  }
+}
 #credentials {
   margin-top: 10%;
-  height: 300px;
+  min-height: 300px;
+  height: auto;
+  padding-block: 3rem;
   position: relative;
   background-image: url("Images/class1.jpg");
   background-repeat: no-repeat;
@@ -1168,6 +1252,98 @@ body {
   color: #fff;
 }
 
+@media (max-width: 1140px) {
+  #credentials .credentials-items .credentials-items-wrapper {
+    padding-inline: 17%;
+  }
+}
+@media (max-width: 1024px) {
+  #credentials {
+    margin-top: 12%;
+    padding-block: 3.5rem;
+  }
+  #credentials .credentials-items .credentials-items-wrapper {
+    gap: 12%;
+  }
+  #credentials .credentials-items .credentials-items-wrapper > div i {
+    font-size: 2.6rem;
+  }
+  #credentials .credentials-items .credentials-items-wrapper > div span {
+    font-size: 1.7rem;
+  }
+  #credentials .credentials-items .credentials-items-wrapper > div h5 {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  #credentials .credentials-items .credentials-items-wrapper {
+    padding-inline: 30%;
+    gap: 10%;
+  }
+}
+@media (max-width: 730px) {
+  #credentials {
+    background-position: center;
+  }
+  #credentials .credentials-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: baseline;
+  }
+  #credentials .credentials-items .credentials-items-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-content: flex-start;
+    justify-items: baseline;
+    align-items: baseline;
+    padding-inline: 6%;
+  }
+  #credentials .credentials-items .credentials-items-wrapper:last-child {
+    margin-top: 0;
+  }
+  #credentials .credentials-items .credentials-items-wrapper > div {
+    justify-content: center;
+    text-align: left;
+  }
+  #credentials .credentials-items .credentials-items-wrapper > div i {
+    font-size: 2.4rem;
+  }
+  #credentials .credentials-items .credentials-items-wrapper > div span {
+    font-size: 1.6rem;
+  }
+  #credentials .credentials-items .credentials-items-wrapper:nth-child(2) > div:nth-child(2) {
+    margin-left: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  #credentials {
+    padding-block: 3rem;
+  }
+  #credentials .credentials-items .credentials-items-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    justify-items: baseline;
+  }
+  #credentials .credentials-items .credentials-items-wrapper > div {
+    justify-content: center;
+  }
+  #credentials .credentials-items .credentials-items-wrapper > div i {
+    font-size: 2.2rem;
+  }
+  #credentials .credentials-items .credentials-items-wrapper > div span {
+    font-size: 1.4rem;
+  }
+  #credentials .credentials-items .credentials-items-wrapper > div h5 {
+    font-size: 13px;
+    white-space: normal;
+    line-height: 1.2;
+  }
+  #credentials .credentials-items .credentials-items-wrapper:nth-child(2) > div:nth-child(2) {
+    margin-left: 0;
+  }
+}
 #certified-teachers {
   padding: 7%;
   padding-block: 5%;
@@ -1300,9 +1476,12 @@ body {
 }
 
 #student-reviews {
+  position: relative;
+  z-index: 0;
   margin-bottom: 5rem;
   padding: 7%;
   padding-block: 5%;
+  padding-bottom: clamp(4rem, 8vw, 6rem);
   background-color: #fff;
 }
 #student-reviews .reviews-container {
@@ -1349,9 +1528,11 @@ body {
 #student-reviews .reviews-container .reviews-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 7%;
+  gap: clamp(1.5rem, 3vw, 3rem);
 }
 #student-reviews .reviews-container .reviews-grid .review-card {
+  max-width: 100%;
+  align-self: stretch;
   background-color: #f5f7fb;
   border-radius: 12px;
   padding: 2rem;
@@ -1400,6 +1581,7 @@ body {
   color: hsl(145deg, 62%, 42%);
   font-size: 12px;
   font-weight: 600;
+  overflow-wrap: break-word;
 }
 #student-reviews .reviews-container .reviews-grid .review-card .review-rating {
   display: flex;
@@ -1419,6 +1601,8 @@ body {
 }
 
 #footer {
+  position: relative;
+  z-index: 1;
   background: linear-gradient(135deg, hsl(228deg, 39%, 23%) 0%, hsl(221deg, 52%, 26%) 100%);
   color: #fff;
   padding: 4% 0 0 0;
@@ -1546,6 +1730,7 @@ body {
   border: none;
   color: #fff;
   font-size: 14px;
+  width: 80%;
 }
 #footer .footer-container .footer-content .footer-section.newsletter-section .newsletter-form input::placeholder {
   color: rgba(255, 255, 255, 0.6);
@@ -1561,6 +1746,7 @@ body {
   cursor: pointer;
   transition: 0.3s;
   font-size: 16px;
+  width: 20%;
 }
 #footer .footer-container .footer-content .footer-section.newsletter-section .newsletter-form button:hover {
   background-color: hsl(145deg, 62%, 42%);

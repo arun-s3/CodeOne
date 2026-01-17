@@ -82,15 +82,24 @@
 <!--------------------------------------FORM starts here-------------------------------------------------------------------------->
     <section id="total-form-container">
         <div class="form-container">
-            <h3>Login here</h3>
+            <h3 id="formTitle">Login here</h3>
+
             <div class="login-form">
-                <input type="email" placeholder="Enter a valid email here" name="email">
-                <input type="password" placeholder="Enter password here" name="password" required>
-                <a href="#">Login</a>
+                <input type="email" id="email" placeholder="Enter a valid email here" name="email">
+                <input type="password" id="password" placeholder="Enter password here" name="password">
+                <a href="#" id="submitBtn">Login</a>
             </div>
-            <h4>Don't have an account?<a href="#">Sign up</a>here</h4>
+
+            <p class="error" id="formError"></p>
+
+            <h4>
+                <span id="toggleText">Don't have an account?</span>
+                <a id="toggleLink">Sign up</a>
+                <span id="toggleSuffix">here</span>
+            </h4>
         </div>
     </section>
+
 <!--------------------------------------FORM ends here-------------------------------------------------------------------------->
 <!--------------------------------------FLOATS starts here----------------------------------------------------------------------->
                                    <!------------------1st Float---------------------->
@@ -271,9 +280,23 @@
 <section id="popular-courses-container">
    <h1>Explore our most enrolled courses</h1>
    <h5>Begin the journey to your dream job with our top courses</h5> 
+
+    <div class="course-controls">
+
+        <input type="text" id="courseSearch" placeholder="Search courses..." />
+
+        <select id="courseSort">
+            <option value="" selected disabled>Sort by</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating-desc">Rating: High to Low</option>
+        </select>
+    </div>
+
+
    <div class="course-grid">
 
-        <div class="course">
+        <div class="course" data-price="1500" data-rating="4.7">
             <div class="course-img-container">
                 <img src="Images/Popular_CourseThumbnails/python5.jpg" alt="">
             </div>
@@ -299,9 +322,9 @@
                 <!-- <h4></h4> -->
             </div>
             <span class="price">&#x20B9 1500</span>
-         </div>     
+        </div>     
 
-         <div class="course">
+        <div class="course" data-price="2000" data-rating="4">
             <div class="course-img-container">
                 <img src="Images/Popular_CourseThumbnails/ml1.jpg" alt="">
             </div>
@@ -326,9 +349,9 @@
                 <!-- <h4></h4> -->
             </div>
             <span class="price">&#x20B9 2000</span>
-         </div>     
+        </div>     
          
-         <div class="course">
+        <div class="course" data-price="1500" data-rating="4.9">
             <div class="course-img-container">
                 <img src="Images/Popular_CourseThumbnails/web1.jpg" alt="">
             </div>
@@ -356,7 +379,330 @@
             <span class="price">&#x20B9 1500</span>
          </div>       
 
-         <div class="course">
+        <div class="course" data-price="1800" data-rating="4.6">
+            <div class="course-img-container">
+                <img src="Images/Popular_CourseThumbnails/reactjs.jpg" alt="">
+            </div>
+            <div id="calender">
+                <i class="fa-regular fa-calendar-days"></i> <span>3 Months</span>
+            </div>
+            <div class="course-text-container">
+                <div>
+                <h4>React.js Complete Guide with Hooks</h4>
+                <h5>by Aman Verma</h5>
+                </div>
+                <div>
+                <span>4.6</span>
+                <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i>
+                </span>
+                <span>(3200 Reviews)</span>
+                </div>
+            </div>
+            <span class="price">&#x20B9 1800</span>
+        </div>
+
+        <div class="course" data-price="900" data-rating="3.8">
+            <div class="course-img-container">
+                <img src="Images/Popular_CourseThumbnails/javaCourse.jpg" alt="">
+            </div>
+            <div id="calender">
+                <i class="fa-regular fa-calendar-days"></i> <span>4 Months</span>
+            </div>
+            <div class="course-text-container">
+                <div>
+                <h4>Java Programming for Absolute Beginners</h4>
+                <h5>by Rohan Malhotra</h5>
+                </div>
+                <div>
+                <span>3.8</span>
+                <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </span>
+                <span>(1400 Reviews)</span>
+                </div>
+            </div>
+            <span class="price">&#x20B9 900</span>
+        </div>
+
+        <div class="course" data-price="1100" data-rating="4.2">
+            <div class="course-img-container">
+                <img src="Images/Popular_CourseThumbnails/uiux.jpg" alt="">
+            </div>
+            <div id="calender">
+                <i class="fa-regular fa-calendar-days"></i> <span>2 Months</span>
+            </div>
+            <div class="course-text-container">
+                <div>
+                <h4>UI/UX Design Fundamentals</h4>
+                <h5>by Neha Kapoor</h5>
+                </div>
+                <div>
+                <span>4.2</span>
+                <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </span>
+                <span>(2100 Reviews)</span>
+                </div>
+            </div>
+            <span class="price">&#x20B9 1100</span>
+        </div>
+
+        <div class="course" data-price="800" data-rating="4">
+            <div class="course-img-container">
+                <img src="Images/Popular_CourseThumbnails/sql.jpg" alt="">
+            </div>
+            <div id="calender">
+                <i class="fa-regular fa-calendar-days"></i> <span>1.5 Months</span>
+            </div>
+            <div class="course-text-container">
+                <div>
+                <h4>SQL & Database Design Bootcamp</h4>
+                <h5>by Kunal Sharma</h5>
+                </div>
+                <div>
+                <span>4.0</span>
+                <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </span>
+                <span>(900 Reviews)</span>
+                </div>
+            </div>
+            <span class="price">&#x20B9 800</span>
+        </div>
+
+        <div class="course" data-price="2200" data-rating="4.8">
+            <div class="course-img-container">
+                <img src="Images/Popular_CourseThumbnails/docker.jpg" alt="">
+            </div>
+            <div id="calender">
+                <i class="fa-regular fa-calendar-days"></i> <span>2.5 Months</span>
+            </div>
+            <div class="course-text-container">
+                <div>
+                <h4>Docker & Kubernetes for Developers</h4>
+                <h5>by Pankaj Singh</h5>
+                </div>
+                <div>
+                <span>4.8</span>
+                <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </span>
+                <span>(4100 Reviews)</span>
+                </div>
+            </div>
+            <span class="price">&#x20B9 2200</span>
+        </div>
+
+        <div class="course" data-price="1600" data-rating="4.3">
+            <div class="course-img-container">
+                <img src="Images/Popular_CourseThumbnails/nodejs.png" alt="">
+            </div>
+            <div id="calender">
+                <i class="fa-regular fa-calendar-days"></i> <span>3 Months</span>
+            </div>
+            <div class="course-text-container">
+                <div>
+                <h4>Node.js & Express Backend Mastery</h4>
+                <h5>by Harshit Jain</h5>
+                </div>
+                <div>
+                <span>4.3</span>
+                <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </span>
+                <span>(2600 Reviews)</span>
+                </div>
+            </div>
+            <span class="price">&#x20B9 1600</span>
+        </div>
+
+        <div class="course" data-price="700" data-rating="3.5">
+            <div class="course-img-container">
+                <img src="Images/Popular_CourseThumbnails/cpp.jpg" alt="">
+            </div>
+            <div id="calender">
+                <i class="fa-regular fa-calendar-days"></i> <span>4 Months</span>
+            </div>
+            <div class="course-text-container">
+                <div>
+                <h4>Mastering C++ for Competitive Programming</h4>
+                <h5>by Deepak Mehta</h5>
+                </div>
+                <div>
+                <span>3.5</span>
+                <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </span>
+                <span>(800 Reviews)</span>
+                </div>
+            </div>
+            <span class="price">&#x20B9 700</span>
+        </div>
+
+        <div class="course" data-price="2500" data-rating="4.9">
+            <div class="course-img-container">
+                <img src="Images/Popular_CourseThumbnails/ai.jpg" alt="">
+            </div>
+            <div id="calender">
+                <i class="fa-regular fa-calendar-days"></i> <span>6 Months</span>
+            </div>
+            <div class="course-text-container">
+                <div>
+                <h4>Artificial Intelligence Full Roadmap</h4>
+                <h5>by Rahul Nair</h5>
+                </div>
+                <div>
+                <span>4.9</span>
+                <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </span>
+                <span>(6100 Reviews)</span>
+                </div>
+            </div>
+            <span class="price">&#x20B9 2500</span>
+        </div>
+
+        <div class="course" data-price="500" data-rating="3.9">
+            <div class="course-img-container">
+                <img src="Images/Popular_CourseThumbnails/linux.jpg" alt="">
+            </div>
+            <div id="calender">
+                <i class="fa-regular fa-calendar-days"></i> <span>1 Month</span>
+            </div>
+            <div class="course-text-container">
+                <div>
+                <h4>Linux Command Line Essentials</h4>
+                <h5>by Arvind Rao</h5>
+                </div>
+                <div>
+                <span>3.9</span>
+                <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </span>
+                <span>(600 Reviews)</span>
+                </div>
+            </div>
+            <span class="price">&#x20B9 500</span>
+        </div>
+
+        <div class="course" data-price="650" data-rating="4.4">
+            <div class="course-img-container">
+                <img src="Images/Popular_CourseThumbnails/git.jpg" alt="">
+            </div>
+            <div id="calender">
+                <i class="fa-regular fa-calendar-days"></i> <span>1 Month</span>
+            </div>
+            <div class="course-text-container">
+                <div>
+                <h4>Git & GitHub Complete Guide</h4>
+                <h5>by Mohit Bansal</h5>
+                </div>
+                <div>
+                <span>4.4</span>
+                <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </span>
+                <span>(1800 Reviews)</span>
+                </div>
+            </div>
+            <span class="price">&#x20B9 650</span>
+        </div>
+
+        <div class="course" data-price="1700" data-rating="4.1">
+            <div class="course-img-container">
+                <img src="Images/Popular_CourseThumbnails/flutter.jpg" alt="">
+            </div>
+            <div id="calender">
+                <i class="fa-regular fa-calendar-days"></i> <span>3.5 Months</span>
+            </div>
+            <div class="course-text-container">
+                <div>
+                <h4>Flutter App Development Bootcamp</h4>
+                <h5>by Sneha Kulkarni</h5>
+                </div>
+                <div>
+                <span>4.1</span>
+                <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </span>
+                <span>(2100 Reviews)</span>
+                </div>
+            </div>
+            <span class="price">&#x20B9 1700</span>
+        </div>
+
+        <div class="course" data-price="850" data-rating="3.6">
+            <div class="course-img-container">
+                <img src="Images/Popular_CourseThumbnails/cybersecurity.jpg" alt="">
+            </div>
+            <div id="calender">
+                <i class="fa-regular fa-calendar-days"></i> <span>2 Months</span>
+            </div>
+            <div class="course-text-container">
+                <div>
+                <h4>Cybersecurity Basics & Ethical Hacking</h4>
+                <h5>by Prateek Joshi</h5>
+                </div>
+                <div>
+                <span>3.6</span>
+                <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </span>
+                <span>(950 Reviews)</span>
+                </div>
+            </div>
+            <span class="price">&#x20B9 850</span>
+        </div>
+
+        <div class="course" data-price="1000" data-rating="5">
             <div class="course-img-container">
                 <img src="Images/Popular_CourseThumbnails/js6.jpg" alt="">
             </div>
@@ -382,8 +728,9 @@
                 <!-- <h4></h4> -->
             </div>
             <span class="price">&#x20B9 1000</span>
-         </div>       
-         <div class="course">
+        </div>  
+
+        <div class="course" data-price="2000" data-rating="4">
             <div class="course-img-container">
                 <img src="Images/Popular_CourseThumbnails/ds1.jpg" alt="">
             </div>
@@ -408,9 +755,9 @@
                 <!-- <h4></h4> -->
             </div>
             <span class="price">&#x20B9 2000</span>
-         </div>     
+        </div>     
 
-         <div class="course">
+        <div class="course" data-price="1200" data-rating="4.5">
             <div class="course-img-container">
                 <img src="Images/Popular_CourseThumbnails/aws5.jpg" alt="">
             </div>
@@ -436,9 +783,14 @@
                 <!-- <h4></h4> -->
             </div>
             <span class="price">&#x20B9 1200</span>
-         </div>     
+        </div>     
 
    </div>
+
+    <div class="courses-toggle-wrapper">
+        <button id="toggleCoursesBtn">See more</button>
+    </div>
+
 </section>
 <!------------------------------------------POPULAR COURSES ends here-------------------------------------------------------------------------->
 <!------------------------------------------Credentials starts here-------------------------------------------------------------------------->
@@ -834,6 +1186,10 @@
 <!------------------------------------------Footer starts here-------------------------------------------------------------------------->
 
 <script src="./main.js"></script>
+
+<script src="./coursesFilterSearch.js"></script>
+
+<script src="./formValidation.js"></script>
 
 </body>
 

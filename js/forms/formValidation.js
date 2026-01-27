@@ -1,5 +1,6 @@
 
-document.addEventListener("DOMContentLoaded", () => {
+export function formValidation() {
+    
     const emailInput = document.getElementById("email")
     const passwordInput = document.getElementById("password")
     const submitBtn = document.getElementById("submitBtn")
@@ -98,4 +99,4 @@ document.addEventListener("DOMContentLoaded", () => {
             toggleLink.textContent = "Sign up"
         }
     })
-})
+}

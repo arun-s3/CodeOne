@@ -1777,6 +1777,9 @@ body {
 #footer .footer-container .footer-content .footer-section:first-child .social-links a i {
   font-size: 16px;
 }
+#footer .footer-container .footer-content .footer-section.newsletter-section {
+  position: relative;
+}
 #footer .footer-container .footer-content .footer-section.newsletter-section p {
   color: rgba(255, 255, 255, 0.8);
   font-size: 14px;
@@ -1785,12 +1788,20 @@ body {
 }
 #footer .footer-container .footer-content .footer-section.newsletter-section .newsletter-form {
   display: flex;
+  flex-direction: column;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
-#footer .footer-container .footer-content .footer-section.newsletter-section .newsletter-form input {
+#footer .footer-container .footer-content .footer-section.newsletter-section .newsletter-form .newsletter-field {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+#footer .footer-container .footer-content .footer-section.newsletter-section .newsletter-form .newsletter-field input {
   flex: 1;
   padding: 0.8rem 1rem;
   background-color: transparent;
@@ -1799,13 +1810,16 @@ body {
   font-size: 14px;
   width: 80%;
 }
-#footer .footer-container .footer-content .footer-section.newsletter-section .newsletter-form input::placeholder {
+#footer .footer-container .footer-content .footer-section.newsletter-section .newsletter-form .newsletter-field input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
-#footer .footer-container .footer-content .footer-section.newsletter-section .newsletter-form input:focus {
+#footer .footer-container .footer-content .footer-section.newsletter-section .newsletter-form .newsletter-field input:focus {
   outline: none;
 }
-#footer .footer-container .footer-content .footer-section.newsletter-section .newsletter-form button {
+#footer .footer-container .footer-content .footer-section.newsletter-section .newsletter-form .newsletter-field input.error {
+  border: 1px solid hsl(11deg, 88%, 59%);
+}
+#footer .footer-container .footer-content .footer-section.newsletter-section .newsletter-form .newsletter-field button {
   background-color: transparent;
   border: none;
   color: hsl(145deg, 62%, 42%);
@@ -1815,9 +1829,17 @@ body {
   font-size: 16px;
   width: 20%;
 }
-#footer .footer-container .footer-content .footer-section.newsletter-section .newsletter-form button:hover {
+#footer .footer-container .footer-content .footer-section.newsletter-section .newsletter-form .newsletter-field button:hover {
   background-color: hsl(145deg, 62%, 42%);
   color: #fff;
+}
+#footer .footer-container .footer-content .footer-section.newsletter-section .newsletter-error {
+  position: absolute;
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 13px;
+  color: hsl(11deg, 88%, 59%);
+  opacity: 0.95;
 }
 #footer .footer-container .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -1831,6 +1853,73 @@ body {
 }
 #footer .footer-container .footer-bottom p i {
   color: hsl(11deg, 88%, 59%);
+}
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.newsletter-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.newsletter-modal.hidden {
+  display: none;
+}
+.newsletter-modal .newsletter-modal-content {
+  background: linear-gradient(135deg, #fff 0%, #f7f7f7 100%);
+  padding: 2.2rem;
+  border-radius: 14px;
+  max-width: 420px;
+  text-align: center;
+  animation: scaleIn 0.25s ease;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+.newsletter-modal .newsletter-modal-content h3 {
+  color: hsl(228deg, 39%, 23%);
+  margin-bottom: 0.8rem;
+  font-size: 22px;
+}
+.newsletter-modal .newsletter-modal-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+}
+.newsletter-modal .newsletter-modal-content button {
+  margin-top: 1.4rem;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 6px;
+  background: hsl(145deg, 62%, 42%);
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+.newsletter-modal .newsletter-modal-content button:hover {
+  background: #229150;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style1.css.map */

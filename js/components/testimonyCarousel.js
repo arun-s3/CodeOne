@@ -1,9 +1,12 @@
 
-document.addEventListener("DOMContentLoaded", () => {
+export function testimonyCarousel() {
+
     const track = document.querySelector(".reviews-grid")
     const cards = Array.from(track.children)
     const prevBtn = document.querySelector(".carousel-btn.prev")
     const nextBtn = document.querySelector(".carousel-btn.next")
+
+    if(!track || !cards || !prevBtn || !nextBtn) return
 
     let index = 0
     let visibleCount = getVisibleCount()
@@ -38,4 +41,4 @@ document.addEventListener("DOMContentLoaded", () => {
         index = Math.min(index, cards.length - visibleCount)
         updateCarousel()
     })
-})
+}

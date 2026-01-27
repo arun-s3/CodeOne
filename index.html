@@ -8,6 +8,8 @@
     <meta name="keywords" content="python, c#, full stack development, react, angular">
     <meta name="robots" content="noindex nofollow">
     <meta name="viewport" content="width=device-width initial-scale=1.0">
+
+    <link rel="icon" href="./Images/favicon.ico" type="image/x-icon" />
     
     <link rel="stylesheet" href="style1.css">
 
@@ -230,20 +232,6 @@
 </section>
 <!------------------------------------------FLOATS ends here-------------------------------------------------------------------------->
 <!------------------------------------------COMPANIES starts here-------------------------------------------------------------------------->
-
- <!-- <section id="company-container">
-    <h2>Codeoners are hired everywhere!!</h2>
-    <div class="company-logos">
-        <img src="Images/Company-logos/logo-1.png" alt=""><img src="Images/Company-logos/logo-2.png" alt="">
-        <img src="Images/Company-logos/logo-3.png" alt=""><img src="Images/Company-logos/logo-4.png" alt="">
-        <img src="Images/Company-logos/logo-5.png" alt=""><img src="Images/Company-logos/logo-6.png" alt="">
-        <img src="Images/Company-logos/logo-7.png" alt=""><img src="Images/Company-logos/logo-8.png" alt="">
-        <img src="Images/Company-logos/logo-9.png" alt=""><img src="Images/Company-logos/logo-10.png" alt="">
-        <img src="Images/Company-logos/logo-11.png" alt=""><img src="Images/Company-logos/logo-12.png" alt="">
-        <img src="Images/Company-logos/logo-13.png" alt=""><img src="Images/Company-logos/logo-14.png" alt="">
-        <img src="Images/Company-logos/logo-15.png" alt=""> 
-    </div>
- </section> -->
 
  <section id="company-container">
     <h1>CodeOners are hired everywhere</h1>
@@ -968,7 +956,7 @@
     </div>
 </section>
 
-<!------------------------------------------Certified Teachers ens here-------------------------------------------------------------------------->
+<!------------------------------------------Certified Teachers ends here-------------------------------------------------------------------------->
 <!------------------------------------------Student Testimonials starts here-------------------------------------------------------------------------->
 
 <section id="student-reviews"> 
@@ -1179,11 +1167,17 @@
             <div class="footer-section newsletter-section">
                 <h5>Subscribe to Newsletter</h5>
                 <p>Get the latest updates and course releases directly to your inbox.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+            
+                <form class="newsletter-form" novalidate>
+                    <div class="newsletter-field">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email">
+                        <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
                 </form>
+                <span class="newsletter-error"></span>
+
             </div>
+
         </div>
 
         <div class="footer-bottom">
@@ -1192,15 +1186,9 @@
     </div>
 </footer>
 
-<!------------------------------------------Footer starts here-------------------------------------------------------------------------->
+<!------------------------------------------Footer ends here-------------------------------------------------------------------------->
 
-<script src="./main.js"></script>
-
-<script src="./coursesFilterSearch.js"></script>
-
-<script src="./formValidation.js"></script>
-
-<script src="./testimonyCarousal.js"></script>
+<script type="module" src="./Js/main.js"></script>
 
 </body>
 

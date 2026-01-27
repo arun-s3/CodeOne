@@ -131,6 +131,8 @@
                 }
 
                 &.newsletter-section{
+                    position: relative;
+
                     p{
                         color: rgba(255, 255, 255, 0.8);
                         font-size: 14px;
@@ -140,44 +142,64 @@
 
                     .newsletter-form{
                         display: flex;
+                        flex-direction: column;
                         background-color: rgba(255, 255, 255, 0.1);
                         border-radius: 8px;
                         overflow: hidden;
                         border: 1px solid rgba(255, 255, 255, 0.2);
 
-                        input{
-                            flex: 1;
-                            padding: 0.8rem 1rem;
-                            background-color: transparent;
-                            border: none;
-                            color: #fff;
-                            font-size: 14px;
-                            width: 80%;
+                        .newsletter-field {
+                            display: flex;
+                            background-color: rgba(255, 255, 255, 0.1);
+                            border-radius: 8px;
+                            overflow: hidden;
+                            border: 1px solid rgba(255, 255, 255, 0.2);
 
-                            &::placeholder{
-                                color: rgba(255, 255, 255, 0.6);
-                            }
-
-                            &:focus{
-                                outline: none;
-                            }
-                        }
-
-                        button{
-                            background-color: transparent;
-                            border: none;
-                            color: $site-green;
-                            padding: 0.8rem 1rem;
-                            cursor: pointer;
-                            transition: 0.3s;
-                            font-size: 16px;
-                            width: 20%;
-
-                            &:hover{
-                                background-color: $site-green;
+                            input{
+                                flex: 1;
+                                padding: 0.8rem 1rem;
+                                background-color: transparent;
+                                border: none;
                                 color: #fff;
+                                font-size: 14px;
+                                width: 80%;
+
+                                &::placeholder{
+                                    color: rgba(255, 255, 255, 0.6);
+                                }
+
+                                &:focus{
+                                    outline: none;
+                                }
+
+                                &.error {
+                                    border: 1px solid $site-orange;
+                                }
+                            }
+                            button{
+                                background-color: transparent;
+                                border: none;
+                                color: $site-green;
+                                padding: 0.8rem 1rem;
+                                cursor: pointer;
+                                transition: 0.3s;
+                                font-size: 16px;
+                                width: 20%;
+
+                                &:hover{
+                                    background-color: $site-green;
+                                    color: #fff;
+                                }
                             }
                         }
+                    }
+                    .newsletter-error {
+                        position: absolute;
+                        display: block;
+                        margin-top: 0.6rem;
+                        font-size: 13px;
+                        color: $site-orange;
+                        opacity: 0.95;
                     }
                 }
             }
@@ -197,6 +219,17 @@
                     color: $site-orange;
                 }
             }
+        }
+    }
+                    
+    @keyframes scaleIn {
+        from {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
         }
     }
 }

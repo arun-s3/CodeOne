@@ -1,11 +1,13 @@
 
-document.addEventListener("DOMContentLoaded", () => {
-    
+export function coursesFilterSearch() {
+
     const courseGrid = document.querySelector(".course-grid")
     const allCourses = Array.from(document.querySelectorAll(".course"))
     const toggleBtn = document.getElementById("toggleCoursesBtn")
     const searchInput = document.getElementById("courseSearch")
     const sortSelect = document.getElementById("courseSort")
+
+    if (!courseGrid || !allCourses || !toggleBtn || !searchInput || !sortSelect) return
 
     sortSelect.value = ""
 
@@ -74,4 +76,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     render()
-})
+}

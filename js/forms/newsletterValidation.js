@@ -7,16 +7,27 @@ export function newsletterValidation() {
 
     const modal = document.createElement("div")
     modal.className = "newsletter-modal hidden"
+
     modal.innerHTML = `
         <div class="newsletter-modal-content">
             <h3>You're subscribed! 🎉</h3>
+
             <p>
-                Thank you for subscribing!  
-                We’ll send you the latest updates, new courses, and news straight to your inbox.
+                Thanks for subscribing!  
+                You’ll receive updates about new courses, features, and announcements.
             </p>
+
+            <hr class="modal-divider" />
+
+            <p class="demo-note">
+                This is a demo project — no real emails will be sent or stored.
+            </p>
+
             <button type="button" class="close-modal">Got it</button>
         </div>
     `
+
+
     document.body.appendChild(modal)
 
     const closeModal = () => modal.classList.add("hidden")

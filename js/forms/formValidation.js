@@ -9,6 +9,11 @@ export function formValidation() {
     const formTitle = document.getElementById("formTitle")
     const formError = document.getElementById("formError")
 
+    const authModal = document.getElementById("authModal")
+    const authModalTitle = document.getElementById("authModalTitle")
+    const authModalMessage = document.getElementById("authModalMessage")
+    const authModalBtn = document.getElementById("authModalBtn")
+
     let isSignup = false
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -63,6 +68,22 @@ export function formValidation() {
         }
     })
 
+    function showModal(title, message) {
+        authModalTitle.textContent = title
+        authModalMessage.textContent = message
+        authModal.classList.remove("hidden")
+    }
+
+    authModalBtn.addEventListener("click", () => {
+        authModal.classList.add("hidden")
+    })
+
+    authModal.addEventListener("click", (e) => {
+        if (e.target === authModal) {
+            authModal.classList.add("hidden")
+        }
+    })
+
     submitBtn.addEventListener("click", (e) => {
         e.preventDefault()
 
@@ -70,12 +91,15 @@ export function formValidation() {
         if (!isValid) return
 
         if (isSignup) {
-            console.log("Signup success")
-            alert("Success! \n\n" + "This is a demo project.\n" + "No real account is created and no data is stored.")
-
+            showModal(
+                "Account created 🎉",
+                "Your account has been created successfully. This is a demo project — no data is stored.",
+            )
         } else {
-            console.log("Login success")
-            alert("Login successful! \n\n" + "This is a demo project.\n" + "No real account is created and no data is stored.")
+            showModal(
+                "Login successful 👋",
+                "Welcome back! This is a demo project — no real authentication happens here.",
+            )
         }
     })
 

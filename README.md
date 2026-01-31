@@ -110,18 +110,6 @@ This project emphasizes:
 
 ---
 
-## 🎯 Project Purpose
-
-This project emphasizes:
-
-* DOM-driven UI state management
-* Scroll-based and interaction-based animations
-* Modular SCSS architecture
-* Interactive, data-like behaviors without a backend
-* Clean separation of structure, style, and logic
-
----
-
 ## 🧱 Page Structure & Sections
 
 ### 1️⃣ Header / Navigation

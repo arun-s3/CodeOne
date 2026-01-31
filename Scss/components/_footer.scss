@@ -1,4 +1,5 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/animations' as *;
 
 
 #footer{
@@ -235,17 +236,6 @@
                     color: $site-orange;
                 }
             }
-        }
-    }
-                    
-    @keyframes scaleIn {
-        from {
-            transform: scale(0.9);
-            opacity: 0;
-        }
-        to {
-            transform: scale(1);
-            opacity: 1;
         }
     }
 }

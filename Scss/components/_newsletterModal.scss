@@ -1,4 +1,5 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/animations' as *;
 
 .newsletter-modal {
     position: fixed;
@@ -66,16 +67,6 @@
     }
 }
 
-@keyframes scaleIn {
-    from {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
 
 @media (max-width: 480px) {
     .newsletter-modal {

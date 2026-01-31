@@ -7,6 +7,22 @@ layout composition, animation systems, stateful DOM behavior, and production-sty
 
 ---
 
+## 🎯 Project Purpose
+
+CodeOne was built to answer:
+
+> *How much real engineering depth can be shown using just HTML, SCSS, and JavaScript?*
+
+This project emphasizes:
+
+* DOM-driven UI state management
+* Scroll-based and interaction-based animations
+* Modular SCSS architecture
+* Interactive, data-like behaviors without a backend
+* Clean separation of structure, style, and logic
+
+---
+
 ## 🔗 Live Demo
 
 👉 [codeone-platform.netlify.app](https://codeone-platform.netlify.app)
@@ -28,6 +44,8 @@ layout composition, animation systems, stateful DOM behavior, and production-sty
 **Client-side form validation, error handling, and success modal rendered via DOM state updates**
 
 ![Login Form](./screenshots/login-form.png)
+![Login Form](./screenshots/login-form-validation.png)
+![Login Form](./screenshots/login-form-modal.png)
 
 ..................................................................................................
 
@@ -88,6 +106,7 @@ layout composition, animation systems, stateful DOM behavior, and production-sty
 **Email validation, error messaging, and responsive confirmation modal injected via DOM manipulation**
 
 ![Footer Newsletter](./screenshots/footer-newsletter.png)
+![Footer Newsletter](./screenshots/newsletter-modal.png)
 
 ---
 
@@ -293,7 +312,7 @@ scss/
 
 ---
 
-## 🧠 Engineering Focus
+## 🧠 Frontend Engineering Focus
 
 CodeOne focuses on practicing and showcasing core frontend concepts through a single, well-structured landing page:
 
@@ -302,7 +321,6 @@ CodeOne focuses on practicing and showcasing core frontend concepts through a si
 - Scalable SCSS architecture (abstracts, components, animations)
 - Event-driven DOM updates and state-based UI changes
 - Purposeful animations that are minimal and modern that also support clarity and interaction
-
 
 ---
 

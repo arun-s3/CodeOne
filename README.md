@@ -23,7 +23,7 @@ This project emphasizes:
 
 ---
 
-## 🔗 Live Demo
+## 🔗 Live Web Application
 
 👉 [codeone-platform.netlify.app](https://codeone-platform.netlify.app)
 
@@ -295,8 +295,11 @@ scss/
 - HTML5
 - SCSS
 - Vanilla JavaScript (ES6+)
+- DOM APIs
   - Explicit DOM manipulations & state management
   - Event-driven UI updates
+  - Intersection Observer
+- Intersection Observer
 
 ---
 
